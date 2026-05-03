@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitácora — CarpinchoLab TP1</title>
+  <meta name="description" content="Bitácora de desarrollo del proyecto web grupal TP1.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Principal">
+      <a class="logo" href="index.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Carpincho<span>Lab</span></a>
+      <div class="nav-cluster">
+        <div class="nav-links">
+          <a href="index.html">Inicio</a>
+          <a href="bitacora.html" aria-current="page">Bitácora</a>
+          <button type="button" class="nav-toggle-team" id="nav-team-toggle" aria-expanded="false">
+            Equipo <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="nav-submenu" role="menu">
+          <a href="perfil-roji.html" role="menuitem">Roji</a>
+          <a href="perfil-fran.html" role="menuitem">Fran</a>
+          <a href="perfil-cin.html" role="menuitem">Cin</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <p class="intro-badge"><i class="fa-solid fa-book" aria-hidden="true"></i> Bitácora de proceso</p>
+      <h1>Evolución del proyecto</h1>
+      <p class="hero-lead">
+        Registro inicial del TP1 (se ampliará en TP2 según la consigna). Documentamos decisiones de diseño, tropiezos y cambios durante la implementación.
+      </p>
+    </article>
+
+    <div class="bitacora-timeline">
+      <article>
+        <h3>Decisiones de diseño</h3>
+        <p>
+          Elegimos una estética oscura coherente con acento en verde mint (#3dd9a5) sobre fondos fríos (#0f1419 → #232d3a) para obtener contraste suficiente y un aspecto cercano a “dashboard” moderno sin depender de frameworks.
+        </p>
+        <p>
+          Para tipografías usamos <strong>Outfit</strong> en títulos y <strong>DM Sans</strong> en cuerpo, ambas cargadas desde Google Fonts, con jerarquía clara mediante tamaños fluidos (<code>clamp</code>) y espaciados consistentes.
+        </p>
+        <p>
+          La navegación queda siempre disponible mediante encabezado fijo (<code>position: sticky</code>) con acceso desde Inicio, Bitácora y un submenú de integrantes para evitar el uso del botón “Atrás”.
+        </p>
+      </article>
+
+      <article>
+        <h3>Dificultades y cómo las resolvimos</h3>
+        <ul class="list-accent">
+          <li><strong>Menú desplegable accesible:</strong> combinamos clase en el <code>nav</code> con clic fuera del menú para cerrarlo y mantener <code>aria-expanded</code> sincronizado.</li>
+          <li><strong>Responsive en breakpoints 400px, 900px y 1200px:</strong> partimos mobile-first y ajustamos grillas (<code>.team-grid</code>) para 1 columna (&lt;900px), 2 columnas (≥900px) y 3 (≥1200px), revisando también padding y tamaños base de fuente.</li>
+          <li><strong>Coherencia visual en perfiles:</strong> mismo “layout” (<code>.profile-sheet</code>) con variaciones mínimas; en todas las fichas la interacción en JS muestra u oculta un bloque de hobbies extra desde un botón consistente.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>Cambios importantes en la implementación</h3>
+        <ul class="list-accent">
+          <li>Separación estricta: HTML en raíz, <code>css/styles.css</code> global, scripts por página donde aplica más claridad (<code>perfil-roji.js</code>, etc.).</li>
+          <li>Avatares con SVG inventados en lugar de fotos personales, alineado a la recomendación de privacidad de la consigna.</li>
+          <li>Iconografía mediante <strong>Font Awesome</strong> (CDN) sólo donde aporta (marca tipo logo, navegación).</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="index.html">← Volver al inicio</a></p>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+</body>
+</html>

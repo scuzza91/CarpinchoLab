@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Roji — CarpinchoLab</title>
+  <meta name="description" content="Tarjeta de presentación de Roji.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Outfit:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-inner" aria-label="Principal">
+      <a class="logo" href="index.html"><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Carpincho<span>Lab</span></a>
+      <div class="nav-cluster">
+        <div class="nav-links">
+          <a href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> Inicio</a>
+          <a href="bitacora.html">Bitácora</a>
+          <button type="button" class="nav-toggle-team" id="nav-team-toggle" aria-expanded="false">
+            Equipo <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="nav-submenu" role="menu">
+          <a href="perfil-roji.html" role="menuitem" aria-current="page">Roji</a>
+          <a href="perfil-fran.html" role="menuitem">Fran</a>
+          <a href="perfil-cin.html" role="menuitem">Cin</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="profile-layout">
+      <div class="profile-photo-wrap">
+        <img class="profile-photo" src="img/Rocio.png" width="320" height="320" alt="Foto de presentación de Roji">
+      </div>
+      <article class="profile-sheet" id="profile-card">
+        <h1>Roji</h1>
+        <p class="profile-meta">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <strong>Ciudad actual:</strong> CABA, Ciudad Autónoma de Buenos Aires &nbsp;·&nbsp;
+          <strong>Edad:</strong> 37 años
+        </p>
+        <h2>Habilidades</h2>
+        <ul class="skill-tags" aria-label="Habilidades técnicas y blandas">
+          <li>Comunicación técnica</li>
+          <li>Markdown y README</li>
+          <li>HTML semántico</li>
+          <li>Pruebas de accesibilidad básicas</li>
+          <li>Organización por carpetas</li>
+        </ul>
+
+        <h2>Películas favoritas</h2>
+        <ul class="list-accent">
+          <li><cite>Volver al futuro</cite> (Robert Zemeckis)</li>
+          <li><cite>Esperando la Caroza</cite> (Alejandro Doria)</li>
+          <li><cite>La Cienaga</cite> (Lucrecia Martel)</li>
+        </ul>
+
+        <h2>Discos favoritos</h2>
+        <ul class="list-accent">
+          <li><em>Jessico</em> — Babasonicos</li>
+          <li><em>Debí tirar mas fotos</em> — Bad Bunny</li>
+          <li><em> Las 4 estaciones</em> — Vivaldi</li>
+        </ul>
+
+        <div class="details-panel">
+          <button type="button" class="btn btn-ghost details-panel-toggle" id="toggle-hobbies">
+            Mostrar hobbies extra <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+          <div id="extra-hobbies" hidden>
+            <p>
+              Fotografía urbana liviana, andar en bici y construir cosas.
+            </p>
+          </div>
+        </div>
+
+        <div class="profile-tp1-cta">
+          <a href="https://roji-web-ok.vercel.app/" class="btn btn-primary">Acceso a TP1</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="index.html"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i> Volver a la portada</a></p>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/perfil-roji.js" defer></script>
+</body>
+</html>
