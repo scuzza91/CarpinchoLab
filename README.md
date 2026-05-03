@@ -4,7 +4,7 @@
 
 **Nombre del equipo / proyecto:** CarpinchoLab  
 
-**Deploy en producción:** [Insertar aquí el enlace de Vercel](https://vercel.com) — *Ejemplo tras publicar:* `https://nombre-del-proyecto.vercel.app`
+**Deploy en producción:** https://carpincho-lab.vercel.app/
 
 ---
 
@@ -16,11 +16,11 @@ Sitio web estático multipágina para cumplir el TP1 Grupal de Frontend: present
 
 ## Integrantes
 
-| Integrante           | Rol sugerido (editable)           | GitHub |
+| Integrante           | Rol sugerido (editable)           | Vercel |
 |----------------------|-----------------------------------|--------|
-| Roji                | Documentación · accesibilidad     | https://github.com/TU-USUARIO-roji |
-| Fran                 | Responsive · CSS · JS             | https://github.com/TU-USUARIO-fran |
-| Cin                  | Estética · pruebas en móvil       | https://github.com/TU-USUARIO-cin |
+| Roji                | Documentación · accesibilidad     | https://roji-web-ok.vercel.app/ |
+| Fran                 | Responsive · CSS · JS             | https://tp-frontend-wine.vercel.app/|
+| Cin                  | Estética · pruebas en móvil       | https://mi-portfolio-three-gamma.vercel.app/ |
 
 > **Importante:** reemplazá `TU-USUARIO-*` por los perfiles reales de cada integrante.
 
@@ -116,11 +116,11 @@ Colocá las capturas en `img/readme/` y mantené los nombres para que el README 
 
 3. Descomentá o agregá las líneas siguientes (si usás GitHub, las imágenes se verán en el repositorio):
 
-![Portada](img/readme/captura-portada.png)
+![Portada](img/readme/Portada.png)
 
-![Bitácora](img/readme/captura-bitacora.png)
+![Bitácora](img/readme/Bitacora.png)
 
-![Perfil individual](img/readme/captura-perfil.png)
+![Perfil individual](img/readme/Perfil_individual.png)
 
 *Nota: hasta que no existan esos archivos, las imágenes anteriores aparecerán rotas; generá las capturas tras el deploy.*
 
@@ -128,7 +128,7 @@ Colocá las capturas en `img/readme/` y mantené los nombres para que el README 
 
 ## Enlace al proyecto desplegado
 
-- **Vercel:** [Completar con la URL pública](https://vercel.com)
+- **Vercel:** https://carpincho-lab.vercel.app/index.html
 
 ---
 
@@ -141,21 +141,3 @@ Colocá las capturas en `img/readme/` y mantené los nombres para que el README 
 **Imágenes:** los avatares son **SVG simples** hechos a mano en este repositorio (formas geométricas). Si en el futuro usan imágenes generadas por IA, documenten **herramienta/modelo** y **criterio de prompt** aquí.
 
 ---
-
-## Cómo probar en local
-
-Abrí `index.html` con un servidor estático (recomendado para evitar restricciones de algunos navegadores), por ejemplo:
-
-```bash
-# Con Python 3
-python -m http.server 8080
-```
-
-Luego visitá `http://localhost:8080`.
-
----
-
-## Próximos pasos (TP2)
-
-- Ampliar la bitácora y el README con evolución, mejoras y nuevas capturas.
-- Ajustar nombres del equipo, URLs de GitHub y deploy en Vercel antes de la entrega.
