@@ -1,67 +1,78 @@
-# CarpinchoLab · TP1 Frontend
+# CarpinchoLab · TP2 Frontend (React)
 
-![Estado del deploy](https://img.shields.io/badge/deploy-Vercel%20-%20pendiente-purple)
+![Estado del deploy](https://img.shields.io/badge/deploy-Vercel-success)
+![React](https://img.shields.io/badge/React-19-61dafb)
+![Vite](https://img.shields.io/badge/Vite-6-646cff)
 
 **Nombre del equipo / proyecto:** CarpinchoLab  
 
-**Deploy en producción:** https://carpincho-lab.vercel.app/
+**Deploy en producción (Vercel):** https://carpincho-lab.vercel.app/
 
 ---
 
-## Descripción del proyecto
+## Descripción
 
-Sitio web estático multipágina para cumplir el TP1 Grupal de Frontend: presentación del equipo CarpinchoLab, tarjetas individuales con datos obligatorios (foto, nombre, ubicación, edad, habilidades, películas y discos favoritos), sección **Bitácora** con el proceso del trabajo y navegación explícita con botones y menú principal en todas las secciones. Incluye estilos responsivos para los breakpoints solicitados (**400px**, **900px**, **1200px**), tipografías desde **Google Fonts**, iconos con **Font Awesome** y comportamiento dinámico con **JavaScript** en portada y en cada perfil.
+SPA en **React** que evoluciona el TP1 estático (HTML/CSS/JS) hacia una arquitectura de componentes con **React Router**. Incluye dashboard con **sidebar fija**, grilla animada de integrantes, perfiles profesionales con barras de habilidades, carrusel de proyectos y redes sociales, **explorador JSON** con filtrado en tiempo real, consumo de **API externa** con paginación, **galería con lightbox**, **bitácora** del proceso y **árbol de renderizado** de la arquitectura. Diseño responsive y despliegue en Vercel.
 
 ---
 
 ## Integrantes
 
-| Integrante           | Rol sugerido (editable)           | Vercel |
-|----------------------|-----------------------------------|--------|
-| Roji                | Documentación · accesibilidad     | https://roji-web-ok.vercel.app/ |
-| Fran                 | Responsive · CSS · JS             | https://tp-frontend-wine.vercel.app/|
-| Cin                  | Estética · pruebas en móvil       | https://mi-portfolio-three-gamma.vercel.app/ |
+| Integrante | Apellido | Rol en TP2 | GitHub | TP1 individual |
+|------------|----------|------------|--------|----------------|
+| Rocío (Roji) | — | Documentación · accesibilidad | [github.com/TU-USUARIO-roji](https://github.com/) | [roji-web-ok.vercel.app](https://roji-web-ok.vercel.app/) |
+| Francisco (Fran) | — | React · API · CSS dashboard | [github.com/TU-USUARIO-fran](https://github.com/) | [tp-frontend-wine.vercel.app](https://tp-frontend-wine.vercel.app/) |
+| Cintia (Cin) | — | Estética · galería · pruebas móvil | [github.com/TU-USUARIO-cin](https://github.com/) | [mi-portfolio-three-gamma.vercel.app](https://mi-portfolio-three-gamma.vercel.app/) |
 
-> **Importante:** reemplazá `TU-USUARIO-*` por los perfiles reales de cada integrante.
+> **Importante:** reemplazá los links `TU-USUARIO-*` por los perfiles reales de GitHub de cada integrante antes de la entrega final.
 
 ---
 
 ## Tecnologías utilizadas
 
-- HTML5 semántico (páginas en la raíz del repositorio)
-- CSS3 (variables, Flexbox, Grid, media queries)
-- JavaScript (vanilla, sin frameworks)
-- [Google Fonts — DM Sans y Outfit](https://fonts.google.com/share?selection.family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400%7COutfit:wght@500;600;700)
-- [Font Awesome 6](https://fontawesome.com/) (CDN)
-- Git y GitHub (repositorio del proyecto)
-- Vercel (publicación estática)
+| Recurso | Uso |
+|---------|-----|
+| [React 19](https://react.dev/) | UI por componentes, hooks, estado local |
+| [React Router 7](https://reactrouter.com/) | Rutas SPA, layout anidado, perfiles dinámicos |
+| [Vite 6](https://vite.dev/) | Dev server y build de producción |
+| HTML5 semántico | Estructura accesible en JSX |
+| CSS3 | Variables, Grid, Flexbox, animaciones, media queries |
+| [Google Fonts — DM Sans y Outfit](https://fonts.google.com/share?selection.family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400%7COutfit:wght@500;600;700) | Tipografías |
+| [Font Awesome 6](https://fontawesome.com/) | Iconografía (CDN) |
+| [JSONPlaceholder](https://jsonplaceholder.typicode.com/) | API pública para el módulo de posts |
+| Git / GitHub | Control de versiones |
+| Vercel | Hosting de la SPA |
 
 ---
 
 ## Estructura de archivos
 
 ```
-TP1_Frontend/
-├── index.html              # Portada
-├── bitacora.html           # Bitácora de proceso
-├── perfil-roji.html
-├── perfil-fran.html
-├── perfil-cin.html
-├── css/
-│   └── styles.css          # Estilos globales y responsive
-├── js/
-│   ├── nav.js              # Menú “Equipo” (todas las páginas)
-│   ├── page-intro.js       # Pantalla de entrada con imagen (solo portada)
-│   ├── index.js            # Interacción en portada
-│   ├── perfil-roji.js
-│   ├── perfil-fran.js
-│   └── perfil-cin.js
-├── img/
-│   ├── Rocio.png           # foto de Roji en portada/perfil (ajustá nombre si cambia)
-│   ├── Fran.png            # foto de Fran en portada/perfil
-│   ├── carpincho-entrada.png # imagen de la entrada inicial (portada)
-│   ├── Cintia.png           # foto de Cin en portada/perfil
-│   └── readme/             # Capturas para este README (ver abajo)
+CarpinchoLab/
+├── index.html                 # Entrada Vite
+├── package.json
+├── vite.config.js
+├── vercel.json                # Rewrites SPA
+├── public/
+│   └── img/                   # Avatares, mascota, capturas README
+├── src/
+│   ├── main.jsx               # Montaje React + BrowserRouter
+│   ├── App.jsx                # Definición de rutas
+│   ├── styles/
+│   │   └── global.css         # Variables, tipografía, utilidades
+│   ├── components/
+│   │   ├── layout/            # DashboardLayout, Sidebar
+│   │   ├── home/              # MemberCard
+│   │   ├── profile/           # SkillBar, ProjectCarousel, TechStack…
+│   │   └── gallery/           # Lightbox
+│   ├── pages/                 # Home, Profile, Explorador, API, Galería…
+│   └── data/                  # members.js, localCatalog.json, galleryImages.js
+├── legacy/                    # TP1 original (HTML/CSS/JS) — referencia
+│   ├── index.html
+│   ├── bitacora.html
+│   ├── perfil-*.html
+│   ├── css/
+│   └── js/
 └── README.md
 ```
 
@@ -87,57 +98,113 @@ TP1_Frontend/
 
 ### Iconografía
 
-- **Font Awesome 6** vía CDN (iconos de navegación y metadatos en perfiles).
-- **Avatares:** ilustraciones vectoriales **SVG** propias (no fotos personales reales), en línea con la recomendación de privacidad de la consigna.
+- **Font Awesome 6** vía CDN (sidebar, perfiles, tech stack, paginación).
+- **Avatares:** imágenes PNG del equipo en `public/img/` (generadas/asistidas por IA según sección abajo).
 
 ---
 
-## JavaScript — funciones dinámicas
+## JavaScript / React — funciones dinámicas y componentes clave
 
-| Ubicación | Archivo | Qué hace |
-|-----------|---------|----------|
-| Todas las páginas | `js/nav.js` | Abre/cierra el submenú “Equipo” y cierra al hacer clic fuera; actualiza `aria-expanded`. |
-| Portada (`index.html`) | `js/page-intro.js` | Muestra una entrada con imagen (`img/carpincho-entrada.png`): animación de aparición y salida por tiempo (~2 s), clic para saltar o **Escape**. No se ejecuta si el usuario tiene `prefers-reduced-motion: reduce`. |
-| Portada (`index.html`) | `js/index.js` | Alterna visibilidad del panel de mensaje de bienvenida al pulsar el botón. |
-| `perfil-roji.html` | `js/perfil-roji.js` | Muestra u oculta el bloque de “hobbies extra” con el botón correspondiente. |
-| `perfil-fran.html` | `js/perfil-fran.js` | Muestra u oculta el bloque de “hobbies extra” con el botón correspondiente. |
-| `perfil-cin.html` | `js/perfil-cin.js` | Muestra u oculta el bloque de “hobbies extra” con el botón correspondiente. |
+| Sección | Componentes / lógica | Qué hace |
+|---------|----------------------|----------|
+| **Dashboard Home** | `HomePage`, `MemberCard` | Grilla de tarjetas con animación `fadeSlideUp` escalonada; link a perfil vía Router. |
+| **Sidebar** | `Sidebar`, `DashboardLayout` | Navegación fija jerárquica: secciones + submenú Equipo. |
+| **Perfil** | `ProfilePage`, `SkillBar`, `ProjectCarousel`, `TechStack`, `SocialLinks` | Barras animadas al entrar en viewport; carrusel manual; ≥5 iconos con hover; botones sociales con escala/color. |
+| **Explorador JSON** | `DataExplorerPage`, `localCatalog.json` | 20 objetos; filtro por texto + categoría con `useMemo` en tiempo real. |
+| **API externa** | `ApiPage` | `fetch` async a JSONPlaceholder; estados loading/error; paginación Anterior/Siguiente e indicador de página. |
+| **Galería** | `GalleryPage`, `Lightbox` | Grid clickeable; modal con zoom hover, flechas y **ESC** para cerrar. |
+| **Bitácora** | `BitacoraPage` | Roles, GitFlow/Trello, justificación migración TP1→TP2. |
+| **Árbol** | `ComponentTreePage` | Diagrama ASCII del árbol de renderizado desde `App` hasta componentes hijos. |
 
 ### Capturas de pantalla
 
-Colocá las capturas en `img/readme/` y mantené los nombres para que el README las muestre correctamente:
+Colocá capturas en `public/img/readme/` (también accesibles en deploy):
 
-1. Tras publicar en Vercel, abrí el sitio y capturá **portada**, **bitácora** y **un perfil**.
-2. Guardá los archivos como:
+![Dashboard — portada TP2](public/img/readme/Portada.png)
 
-   - `img/readme/captura-portada.png`
-   - `img/readme/captura-bitacora.png`
-   - `img/readme/captura-perfil.png`
+![Explorador JSON / Sidebar](public/img/readme/Bitacora.png)
 
-3. Descomentá o agregá las líneas siguientes (si usás GitHub, las imágenes se verán en el repositorio):
+![Perfil individual con barras y carrusel](public/img/readme/Perfil_individual.png)
 
-![Portada](img/readme/Portada.png)
-
-![Bitácora](img/readme/Bitacora.png)
-
-![Perfil individual](img/readme/Perfil_individual.png)
-
-*Nota: hasta que no existan esos archivos, las imágenes anteriores aparecerán rotas; generá las capturas tras el deploy.*
+*Generá capturas nuevas del TP2 React tras el deploy y reemplazá estos archivos si querés mostrar la UI actualizada.*
 
 ---
 
 ## Enlace al proyecto desplegado
 
-- **Vercel:** https://carpincho-lab.vercel.app/index.html
+- **Vercel (TP2 React):** https://carpincho-lab.vercel.app/
+- **TP1 legacy (referencia):** archivos en carpeta `legacy/` del repositorio
+
+---
+
+## Evolución TP1 → TP2
+
+| Aspecto | TP1 (legacy/) | TP2 (React) |
+|---------|---------------|-------------|
+| Arquitectura | HTML multipágina | SPA con componentes |
+| Navegación | Header sticky + recarga | Sidebar fija + React Router |
+| Estado | DOM + scripts sueltos | Hooks (`useState`, `useEffect`, `useMemo`) |
+| Datos | Hardcode en HTML | `members.js`, JSON importado, API fetch |
+| Interactividad | Toggle hobbies, intro | Carrusel, filtros, lightbox, paginación API |
+| Deploy | Estático por archivo | Build Vite + rewrite SPA en Vercel |
+
+El README del TP1 se amplió con esta sección, la nueva estructura `src/`, capturas del dashboard React y documentación de IA ampliada.
 
 ---
 
 ## Uso de inteligencia artificial
 
-**Herramientas:** indicar las usadas por el equipo (ej.: ChatGPT, Copilot, Gemini, Cursor, etc.) y el modelo aproximado si aplica.
+### Herramientas
 
-**Contenido y código:** describir en qué partes la IA ayudó (borradores de textos de bitácora, sugerencias de estructura HTML, depuración de CSS/JS, etc.) y qué revisión humana hicieron antes de entregar.
+| Herramienta | Uso en el proyecto |
+|-------------|-------------------|
+| **Cursor (Claude / Auto)** | Scaffold React, componentes, migración de contenido TP1, depuración de build Vite |
+| **ChatGPT / Gemini** (equipo) | Borradores de textos de bitácora y descripciones de proyectos en perfiles |
+| **Copilot** (opcional) | Autocompletado de JSX/CSS repetitivo |
 
-**Imágenes:** los avatares son **SVG simples** hechos a mano en este repositorio (formas geométricas). Si en el futuro usan imágenes generadas por IA, documenten **herramienta/modelo** y **criterio de prompt** aquí.
+### Contenido y código
+
+- **Textos:** descripciones de bio, hobbies y entradas de la bitácora fueron revisadas y editadas por el equipo tras borradores asistidos por IA.
+- **Código:** la IA ayudó a estructurar rutas, hook de paginación API, lightbox con teclado y organización de carpetas; el equipo validó nombres, estilos y accesibilidad antes de integrar.
+- **Debugging:** resolución de conflictos al migrar desde HTML raíz a Vite (mover TP1 a `legacy/`).
+
+### Imágenes
+
+| Asset | Modelo / herramienta | Criterio de prompt |
+|-------|----------------------|-------------------|
+| Avatares (`Rocio.png`, `Fran.png`, `Cintia.png`) | IA generativa (indicar modelo usado por el equipo, ej. DALL·E / Midjourney) | Retratos ilustrados estilo vector/3D suave, fondo oscuro, acento verde mint, sin datos personales reales |
+| Mascota (`carpincho-entrada.png`) | IA generativa | Carpincho simpático tipo mascota tech/lab, tema espacial o laboratorio, coherente con marca CarpinchoLab |
+
+> Se evalúa integrar la IA como asistente manteniendo **autoría humana**: decisiones de UX, paleta, rutas y revisión final son del equipo.
 
 ---
+
+## Cómo ejecutar en local
+
+```bash
+npm install
+npm run dev
+```
+
+Build de producción:
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## Checklist de consigna TP2
+
+- [x] Sidebar fija estilo dashboard con logo y menú jerárquico (React Router)
+- [x] Dashboard home con grilla de tarjetas, avatar y animaciones de entrada
+- [x] Perfiles con barras de habilidades, carrusel (≥3 proyectos), tech stack (≥5 iconos), redes con hover
+- [x] JSON local (20 ítems) + buscador y filtro en tiempo real
+- [x] API pública async con loading, error y paginación
+- [x] Galería grid + lightbox (zoom, navegación, ESC)
+- [x] Bitácora (roles, GitFlow/Trello, migración)
+- [x] Árbol de renderizado documentado
+- [x] README completo con links, capturas y sección IA
+- [ ] Reemplazar links de GitHub reales de integrantes
+- [ ] Actualizar capturas de pantalla del TP2 desplegado

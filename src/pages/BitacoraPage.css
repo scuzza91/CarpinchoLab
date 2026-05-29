@@ -1,0 +1,47 @@
+.bitacora-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.bitacora-card {
+  padding: 1.35rem 1.5rem;
+}
+
+.bitacora-card h2 {
+  font-size: 1.15rem;
+  margin-top: 0;
+}
+
+.bitacora-card ul {
+  padding-left: 1.2rem;
+}
+
+.bitacora-card li {
+  margin-bottom: 0.5rem;
+}
+
+.evolution-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.evolution-compare article {
+  padding: 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+}
+
+.evolution-compare h3 {
+  margin-top: 0;
+  font-size: 1rem;
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .evolution-compare {
+    grid-template-columns: 1fr;
+  }
+}

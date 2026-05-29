@@ -1,0 +1,125 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1rem;
+  background: rgba(15, 20, 25, 0.92);
+  border-right: 1px solid var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+.sidebar__brand i {
+  color: var(--color-accent);
+}
+
+.sidebar__brand span {
+  color: var(--color-accent);
+}
+
+.sidebar__nav {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar__section {
+  margin-bottom: 1.25rem;
+}
+
+.sidebar__section-title {
+  margin: 0 0 0.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 0.75rem;
+  margin-bottom: 0.2rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar__link:hover {
+  background: var(--color-accent-soft);
+  color: var(--color-text);
+}
+
+.sidebar__link--active {
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.sidebar__link--child {
+  padding-left: 2rem;
+  font-size: 0.9rem;
+}
+
+.sidebar__footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.sidebar__toggle {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .sidebar {
+    position: sticky;
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sidebar__nav {
+    display: none;
+  }
+
+  .sidebar__nav--open {
+    display: block;
+    margin-top: 0.75rem;
+  }
+
+  .sidebar__toggle {
+    display: inline-flex;
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    border-radius: var(--radius-sm);
+    padding: 0.45rem 0.65rem;
+    cursor: pointer;
+  }
+}

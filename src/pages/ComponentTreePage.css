@@ -1,0 +1,35 @@
+.tree-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.tree-diagram {
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.tree-diagram pre {
+  margin: 0;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.tree-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.tree-legend div {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  font-size: 0.9rem;
+}
+
+.tree-legend strong {
+  color: var(--color-accent);
+}
